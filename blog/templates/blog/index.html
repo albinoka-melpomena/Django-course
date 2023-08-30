@@ -1,0 +1,37 @@
+
+{%extends "base.html"%}
+{%load static%}
+{%block title%}
+My Blog
+{%endblock%}
+{%block css_files%}
+<link rel="stylesheet" href="{%static "blog/post.css" %}" />
+<link rel="stylesheet" href="{%static "blog/index.css" %}" />
+{%endblock%}
+
+
+{%block content%}
+ 
+
+<section id="welcome"> 
+    <header>
+        <img scr="{%static "blog/images/p.jpg"%}" alt="Mira - The Author"/>
+        <h2> MIRA'S BLOG</h2>
+    </header>
+    <p>Hi, </p>
+</section> 
+
+<section id="latest-posts">
+<h2> My Latest Thoughts </h2>
+<ul> 
+    {%for post in posts%}
+       {%include "blog/includes/post.html" %}
+       {%endfor%}  
+</ul>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p></p>
+</section>
+{%endblock%}
